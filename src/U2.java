@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class U2 extends Rocket {
 
 
@@ -10,13 +12,15 @@ public class U2 extends Rocket {
 
     @Override
     public boolean launch() {
-
-        return true;
+        double val1 = .04 * ((double)weight*(double)maxWeight);
+        boolean val2 = new Random().nextInt((int)val1)==0;
+        return val2;
     }
 
     @Override
     public boolean land() {
-
-        return true;
+        double val1 = .08 * ((double)weight*(double)maxWeight);
+        boolean val2 = new Random().nextInt((int)val1)==0;
+        return val2;
     }
 }
