@@ -1,24 +1,34 @@
 import java.util.Random;
 
+//Chance of launch explosion = 5% * (cargo carried / cargo limit)
+
 public class U1 extends Rocket {
 
-    public void U1() {
-        Rocket.cost = 100000000;
-        Rocket.weight = 20000;
-        Rocket.maxWeight = 36000;
+    public  U1() {
+
+        cost = 100000000;
+        weight = 20000;
+        maxWeight = 36000;
     }
 
     @Override
     public boolean launch() {
-        double val1 = .05 * ((double)weight*(double)maxWeight);
-        boolean val2 = new Random().nextInt((int)val1)==0;
-        return val2;
+        float value1 = .05f*((float)weight/(float)maxWeight);
+        float random = new Random().nextInt(20);
+//        float s = random*value1;
+//        System.out.println("value1: " + value1 + " random: " + random);
+//        System.out.println("s: " + s);
+        return (value1*random == 0);
     }
 
     @Override
     public boolean land() {
-        double val1 = .01 * ((double)weight*(double)maxWeight);
-        boolean val2 = new Random().nextInt((int)val1)==0;
-        return val2;
+        float value1 = .01f*((float)weight/(float)maxWeight);
+        float random = new Random().nextInt(20);
+//        float s = random*value1;
+//        System.out.println("value1: " + value1 + " random: " + random);
+//        System.out.println("s: " + s);
+        return (value1*random == 0);
+
     }
 }

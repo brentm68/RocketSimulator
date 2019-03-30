@@ -2,25 +2,30 @@ import java.util.Random;
 
 public class U2 extends Rocket {
 
+    public U2() {
 
-    public void U2() {
-
-        Rocket.cost = 120000000;
-        Rocket.weight = 36000;
-        Rocket.maxWeight = 58000;
+        cost = 120000000;
+        weight = 36000;
+        maxWeight = 58000;
     }
 
     @Override
     public boolean launch() {
-        double val1 = .04 * ((double)weight*(double)maxWeight);
-        boolean val2 = new Random().nextInt((int)val1)==0;
-        return val2;
+        float value1 = .04f*((float)weight/(float)maxWeight);
+        float random = new Random().nextInt(20);
+//        float s = random*value1;
+//        System.out.println("value1: " + value1 + " random: " + random);
+//        System.out.println("s: " + s);
+        return (value1*random == 0);
     }
 
     @Override
     public boolean land() {
-        double val1 = .08 * ((double)weight*(double)maxWeight);
-        boolean val2 = new Random().nextInt((int)val1)==0;
-        return val2;
+        float value1 = .08f*((float)weight/(float)maxWeight);
+        float random = new Random().nextInt(20);
+//        float s = random*value1;
+//        System.out.println("value1: " + value1 + " random: " + random);
+//        System.out.println("s: " + s);
+        return (value1*random == 0);
     }
 }

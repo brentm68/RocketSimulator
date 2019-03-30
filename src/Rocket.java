@@ -1,6 +1,6 @@
 public class Rocket implements SpaceShip {
 
-    static double cost;
+    static int cost;
     static int weight;
     static int maxWeight;
 
@@ -23,6 +23,9 @@ public class Rocket implements SpaceShip {
     @Override
     public int carry(Item item) {
         weight += item.weight;
+        return weight;
+    }
+    public int getWeight() {
         return weight;
     }
 }
