@@ -7,6 +7,6 @@ public interface SpaceShip {
     //determine if ship can carry <Item>
     boolean canCarry(Item item);
     //add <Item> to ship cargo and update weight
-    int carry(Item item);
+    void carry(Item item);
 
 }
