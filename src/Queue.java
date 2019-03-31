@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class Queue {
 
-    public static LinkedList queue = new LinkedList();
+    private static LinkedList queue = new LinkedList();
 
     public void enqueue(Object obj) {
         // Add an item to back of queue.

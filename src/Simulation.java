@@ -2,19 +2,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Simulation {
+class Simulation {
 
-    static File file1 = new File("phase-1.txt");
-    static File file2 = new File("phase-2.txt");
-    ArrayList<Rocket> rocketsu1;
-    ArrayList<Rocket> rocketsu2;
-    static LinkedList queue = new LinkedList();
-    static int totalCost;
-    String rocket;
-    static int totalCostU1;
-    static int totalCostU2;
+    private static File file1 = new File("phase-1.txt");
+    private static File file2 = new File("phase-2.txt");
+    private static LinkedList queue = new LinkedList();
+    private static String rocket;
+    private static int totalCostU1;
+    private static int totalCostU2;
 
-    public static ArrayList loadItems(File file) {
+    private static ArrayList loadItems(File file) {
 
         ArrayList<String> itemsToLoad = new ArrayList<>();
         Scanner scanner = null;
@@ -32,7 +29,7 @@ public class Simulation {
         return itemsToLoad;
     }
 
-    public static ArrayList<Rocket> loadU1(File file) {
+    private static ArrayList<Rocket> loadU1(File file) {
 
         ArrayList<String> toLoadU1;
         if(file == file1) {
@@ -63,7 +60,7 @@ public class Simulation {
         } return rocketsU1;
     }
 
-    public static ArrayList<Rocket> loadU2(File file) {
+    private static ArrayList<Rocket> loadU2(File file) {
 
         ArrayList<String> toLoadU2;
         if(file == file1) {
@@ -94,15 +91,15 @@ public class Simulation {
         } return rocketsU2;
     }
 
-    public static String runSimulation(String rocket, int phase) {
+    public static String runSimulation(String chosenRocket, int phase) {
         File file;
         if(phase == 1) {
             file = file1;
         } else {file = file2;}
-                rocket = rocket;
+                rocket = chosenRocket;
         ArrayList<Rocket> launchingU1 = new ArrayList<>(loadU1(file));
-        totalCost = 0;
-        totalCostU1 = 0;
+        int totalCost = 0;
+        int totalCostU1 = 0;
         if (rocket == "U1") {
             for (Rocket toLaunch : launchingU1) {
                 boolean launched = toLaunch.launch();
