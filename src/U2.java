@@ -11,21 +11,15 @@ public class U2 extends Rocket {
 
     @Override
     public boolean launch() {
-        float value1 = .04f*((float)weight/(float)maxWeight);
+        float value1 = .04f*((float)this.weight/(float)this.maxWeight);
         float random = new Random().nextInt(20);
-//        float s = random*value1;
-//        System.out.println("value1: " + value1 + " random: " + random);
-//        System.out.println("s: " + s);
-        return (value1*random == 0);
+        return (value1*random != 0);
     }
 
     @Override
     public boolean land() {
-        float value1 = .08f*((float)weight/(float)maxWeight);
+        float value1 = .08f*((float)this.weight/(float)this.maxWeight);
         float random = new Random().nextInt(20);
-//        float s = random*value1;
-//        System.out.println("value1: " + value1 + " random: " + random);
-//        System.out.println("s: " + s);
-        return (value1*random == 0);
+        return (value1*random != 0);
     }
 }

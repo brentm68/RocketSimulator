@@ -1,8 +1,8 @@
 public class Rocket implements SpaceShip {
 
-    static int cost;
-    static int weight;
-    static int maxWeight;
+    int cost;
+    int weight;
+    int maxWeight;
 
     @Override
     public boolean launch() {
@@ -16,15 +16,13 @@ public class Rocket implements SpaceShip {
 
     @Override
     public boolean canCarry(Item item) {
-        if(item.weight + Rocket.weight > Rocket.maxWeight);
-        return false;
+        return (item.weight + this.weight < maxWeight);
     }
 
     @Override
     public int carry(Item item) {
-        weight += item.weight;
-        return weight;
-    }
+        return (this.weight += item.weight);
+        }
     public int getWeight() {
         return weight;
     }

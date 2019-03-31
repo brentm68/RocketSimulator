@@ -1,16 +1,11 @@
-import java.io.File;
 import java.util.ArrayList;
 
 public class Main {
 
-    static File file1 = new File("phase-1.txt");
-    static File file2 = new File("phase-2.txt");
-
     public static void main(String args[]) {
-
-        ArrayList<Item> phaseOneArrayList = new ArrayList<>(Simulation.loadItems(file1));
-        System.out.println(phaseOneArrayList.toString());
-//        ArrayList<Item> phaseTwoArrayList = new ArrayList<>(Simulation.loadItems(file2));
-
+        String budget = Simulation.runSimulation("U1",1) + Simulation.runSimulation("U1",2);
+        System.out.println(budget);
+        budget = Simulation.runSimulation("U2",1) + Simulation.runSimulation("U2",2);
+        System.out.println(budget);
     }
 }
